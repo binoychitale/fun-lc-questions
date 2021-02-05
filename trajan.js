@@ -57,13 +57,10 @@ function search(curr, nodes, visited, discovery, low, result, ts, tree) {
                 result.push([curr, index]);
             }
             low[curr] = Math.min(low[curr], l);
-            //console.log(l);
             continue;
         }
         if (tree.includes(index) && tree[tree.findIndex((val) => val === index) + 1] !== curr) {
             let disc = discovery[index];
-             // if (curr === 8)
-             // console.log(curr, index, disc);
             low[curr] = Math.min(low[curr], disc);
         }
     }
